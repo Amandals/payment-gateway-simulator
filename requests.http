@@ -1,0 +1,74 @@
+### Create Payment
+POST http://localhost:8080/payments
+Content-Type: application/json
+
+{
+  "amount": 150.50,
+  "currency": "BRL",
+  "description": "Pagamento de teste"
+}
+
+### Teste de Requisição Inválida (@Valid)
+POST http://localhost:8080/payments
+Content-Type: application/json
+
+{
+  "amount": 0,
+  "currency": "BR",
+  "description": "Teste inválido"
+}
+
+### Get Payment
+GET http://localhost:8080/payments/1fbbb860-bf9f-48d8-b51a-304562e4c1e0
+
+### Payment Inexistente:
+GET http://localhost:8080/payments/00000000-0000-0000-0000-000000000000
+
+### Teste VALOR
+POST http://localhost:8080/payments
+Content-Type: application/json
+
+{
+  "amount": 0,
+  "currency": "BR",
+  "description": "Teste"
+}
+
+### Authorize Payment
+POST http://localhost:8080/payments/1fbbb860-bf9f-48d8-b51a-304562e4c1e0/authorize
+
+POST http://localhost:8080/payments/1fbbb860-bf9f-48d8-b51a-304562e4c1e0/authorize
+
+### Teste Cancel Payment
+POST http://localhost:8080/payments/1fbbb860-bf9f-48d8-b51a-304562e4c1e0/cancel
+
+#Teste> status mudou, não é pra dar pra cancelar denovo
+POST http://localhost:8080/payments/1fbbb860-bf9f-48d8-b51a-304562e4c1e0/cancel
+
+### Create Payment
+POST http://localhost:8080/payments
+Content-Type: application/json
+
+{
+  "amount": 200.00,
+  "currency": "BRL",
+  "description": "Pagamento para teste de decline"
+}
+
+### Decline Payment
+POST http://localhost:8080/payments/cefb4ccd-c062-4c56-b2e7-d5bffe147a9b/decline
+
+### Create Payment
+POST http://localhost:8080/payments
+Content-Type: application/json
+
+{
+  "amount": 500.00,
+  "currency": "BRL",
+  "description": "Pagamento para teste de refund"
+}
+
+### Authorize Payment
+POST http://localhost:8080/payments/3c39c196-ac10-42e8-ab31-5781fef0f3a6/authorize
+### Refund Payment
+POST http://localhost:8080/payments/3c39c196-ac10-42e8-ab31-5781fef0f3a6/refund
