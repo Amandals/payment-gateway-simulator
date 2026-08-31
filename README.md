@@ -294,8 +294,8 @@ O objetivo é manter o schema versionado e reproduzível entre ambientes.
 *[ ] Auditoria
 
 ### ASSÍNCRONO
-*[ ] Outbox Pattern
-*[ ] Outbox Publisher
+*[x] Outbox Pattern
+*[x] Outbox Publisher
 *[ ] RabbitMQ
 *[ ] Payment Consumer
 *[ ] Mock Payment Provider
